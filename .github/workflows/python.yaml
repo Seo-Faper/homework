@@ -18,7 +18,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
           
       - name: Display Python version
-        run: python -c "import sys; print("파이썬 버전:" +sys.version")"
+        run: python -c "import sys; print("파이썬 버전:" +sys.version)"
         
       - name: Create version artifact
         run: |
