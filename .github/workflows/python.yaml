@@ -12,21 +12,21 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: 파이썬 버전 세팅 ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
           
-      - name: Display Python version
+      - name: 파이썬 버전 출력
         run: python -c "import sys; print(sys.version)"
         
-      - name: Create version artifact
+      - name: 아키팩트 생성 중..
         run: |
           echo ${{ matrix.python-version }} > version.txt
           echo "::set-output name=version::$(cat version.txt)"
         id: version
         
-      - name: Upload artifact
+      - name: 아키팩트 업로드
         uses: actions/upload-artifact@v2
         with:
           name: python-versions
