@@ -22,7 +22,7 @@ jobs:
         
       - name: Create version artifact
         run: |
-          echo: python -c "import sys; print("파이썬 버전:" +sys.version")" > version.txt
+          echo: python -c "import sys; print(\"파이썬 버전:\" +sys.version)" > version.txt
         id: version
         
       - name: Upload artifact
