@@ -23,11 +23,10 @@ jobs:
       - name: 아키팩트 생성 중..
         run: |
           echo ${{ matrix.python-version }} > version.txt
-          echo "::set-output name=version::$(cat version.txt)"
         id: version
         
       - name: 아키팩트 업로드
         uses: actions/upload-artifact@v2
         with:
-          name: python-versions
+          name: 파이썬 버
           path: version.txt
