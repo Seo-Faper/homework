@@ -21,11 +21,11 @@ jobs:
         run: python -c "import sys; print(\"파이썬 버전:\" +sys.version)"
         
       - name: Create version artifact
-        run: python -c "import sys; print(\"파이썬 버전:\" +sys.version)" >> version.txt
+        run: python -c "import sys; print(\"파이썬 버전:\" +sys.version)" >> version(${{ matrix.python-version }}).txt
         id: version
         
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: python-versions
-          path: version.txt
+          path: version(${{ matrix.python-version }}).txt
