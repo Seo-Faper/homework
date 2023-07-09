@@ -18,14 +18,11 @@ jobs:
           python-version: ${{ matrix.python-version }}
           
       - name: Display Python version
-        run: python -c "import sys; print(sys.version)"
+        run: python -c "import sys; print("파이썬 버전:" +sys.version")"
         
       - name: Create version artifact
         run: |
-          echo "Python 3.8: $(python3.8 --version)" >> version.txt
-          echo "Python 3.9: $(python3.9 --version)" >> version.txt
-          echo "Python 3.10: $(python3.10 --version)" >> version.txt
-          echo "::set-output name=version::$(cat version.txt)"
+          echo: python -c "import sys; print("파이썬 버전:" +sys.version")" > version.txt
         id: version
         
       - name: Upload artifact
