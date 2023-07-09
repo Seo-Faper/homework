@@ -28,5 +28,5 @@ jobs:
       - name: 아키팩트 업로드
         uses: actions/upload-artifact@v2
         with:
-          name: 파이썬 버
+          name: 파이썬 버전
           path: version.txt
